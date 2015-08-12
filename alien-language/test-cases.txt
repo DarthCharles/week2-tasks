@@ -1,0 +1,4 @@
+(ab)(bc)(ca)
+abc
+(abc)(abc)(abc)
+(zyx)bc
