@@ -10,7 +10,7 @@ import ("fmt"
   "os")
 
 func main() {
-  file, err := os.Open(os.Args[1])
+  file, err := os.Openc)
   if err != nil {
     log.Fatal(err)
   }
@@ -19,12 +19,8 @@ func main() {
   scanner := bufio.NewScanner(file)
   var lines []string
   for scanner.Scan() {
-    //'scanner.Text()' represents the test case, do something with it
-    //fmt.Println(scanner.Text())
-    //  lines.append(lines, scanner.Text())
     lines = append(lines, scanner.Text())
   }
-
 
   for i := 1; i < len(lines); i+=3 {
     first_array_s := strings.Split(lines[i + 1], " ")
@@ -46,11 +42,6 @@ func main() {
     for i := 0; i < len(first_array_i); i++ {
       res += first_array_i[i] * second_array_i[i];
     }
-
-    fmt.Println("Case #: " + strconv.Itoa(res))
-
-
+    fmt.Println("Case # "+ strconv.Itoa((i/3) + 1)+": "+ strconv.Itoa(res))
   }
-
-
 }
