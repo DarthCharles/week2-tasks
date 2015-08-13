@@ -1,12 +1,13 @@
 
 package main
 
-import "fmt"
-import "log"
-import "bufio"
-import "strings"
-import "strconv"
-import "os"
+import ("fmt"
+  "log"
+  "bufio"
+  "strings"
+  "strconv"
+  "sort"
+  "os")
 
 func main() {
   file, err := os.Open(os.Args[1])
@@ -37,19 +38,19 @@ func main() {
       k, _ = strconv.Atoi(second_aray_s[i])
       second_array_i = append(second_array_i, k)
     }
-    res :=
 
-    for (var j = 0; j < first_aray.length; j++) {
-      res += first_aray[j] * second_aray[j];
-    }
+    sort.Sort(sort.Reverse(sort.IntSlice(first_array_i)))
+    sort.Sort(sort.IntSlice(second_array_i))
 
+    res := 0
     for i := 0; i < len(first_array_i); i++ {
-
+      res += first_array_i[i] * second_array_i[i];
     }
-    fmt.Println(first_array_i)
-    fmt.Println(second_array_i)
+
+    fmt.Println("Case #: " + strconv.Itoa(res))
+
 
   }
 
-  //fmt.Println(first_aray)
+
 }
