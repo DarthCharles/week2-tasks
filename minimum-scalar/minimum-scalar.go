@@ -10,7 +10,7 @@ import ("fmt"
   "os")
 
 func main() {
-  file, err := os.Openc)
+   file, err := os.Open(os.Args[1])
   if err != nil {
     log.Fatal(err)
   }
